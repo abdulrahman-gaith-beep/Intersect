@@ -165,23 +165,25 @@ This document outlines a battle-tested recovery plan for Intersect. We will:
 
 ### 2.1 Low-Code Tech Stack
 
-**Total Monthly Cost Target: < SAR 2,000 (~$530 USD)**
+**Total Monthly Cost Target: < SAR 2,000**
 
-| Function | Tool | Why | Monthly Cost |
-|----------|------|-----|--------------|
-| **CRM** | HubSpot Free + Paid Starter | Best-in-class for B2B, Arabic support, automation | $45/mo |
-| **Project Management** | Notion | Flexible, client-facing pages, AI-native | $10/mo |
-| **Client Portal** | Notion + Softr | Build custom portals without code | $59/mo |
-| **Communication** | Slack Free + Microsoft Teams | Internal + External | Free |
-| **Document Management** | Google Workspace | Already using, keep it | $12/mo |
-| **Automation** | Make (Integromat) | Better than Zapier for complex workflows | $16/mo |
-| **AI Agent** | OpenAI API + Custom GPT | Core automation engine | $50/mo |
-| **Scheduling** | Calendly | Client meetings, partner coordination | $12/mo |
-| **Proposals/Contracts** | PandaDoc Free | Professional, e-signatures | Free |
-| **Accounting** | Zoho Books | Saudi VAT compliant | $24/mo |
-| **Analytics** | Google Analytics + Hotjar | Website + user behavior | Free |
+> **Note:** Tool prices are listed in USD as they are billed internationally. Use exchange rate of 1 USD = 3.75 SAR for budgeting purposes.
 
-**TOTAL: ~$228/month (SAR 855)**
+| Function | Tool | Why | Monthly Cost (USD) | Monthly Cost (SAR) |
+|----------|------|-----|-------------------|-------------------|
+| **CRM** | HubSpot Free + Paid Starter | Best-in-class for B2B, Arabic support, automation | $45 | SAR 169 |
+| **Project Management** | Notion | Flexible, client-facing pages, AI-native | $10 | SAR 38 |
+| **Client Portal** | Notion + Softr | Build custom portals without code | $59 | SAR 221 |
+| **Communication** | Slack Free + Microsoft Teams | Internal + External | Free | Free |
+| **Document Management** | Google Workspace | Already using, keep it | $12 | SAR 45 |
+| **Automation** | Make (Integromat) | Better than Zapier for complex workflows | $16 | SAR 60 |
+| **AI Agent** | OpenAI API + Custom GPT | Core automation engine | $50 | SAR 188 |
+| **Scheduling** | Calendly | Client meetings, partner coordination | $12 | SAR 45 |
+| **Proposals/Contracts** | PandaDoc Free | Professional, e-signatures | Free | Free |
+| **Accounting** | Zoho Books | Saudi VAT compliant | $24 | SAR 90 |
+| **Analytics** | Google Analytics + Hotjar | Website + user behavior | Free | Free |
+
+**TOTAL: ~$228/month (~SAR 855)**
 
 ### 2.2 The AI Operations Agent: Complete Workflow
 
@@ -861,6 +863,12 @@ And: [Partner Name] (the "Partner")
 1. SCOPE OF SERVICES
    Partner agrees to provide [SERVICE CATEGORY] services to 
    Company's clients as directed.
+   
+   SCOPE LIMITATIONS:
+   - Services limited to those specified in individual project briefs
+   - Maximum [X] hours per project unless pre-approved in writing
+   - Additional requests beyond original scope require new agreement
+   - Partner may decline requests outside their stated expertise
 
 2. COMMISSION STRUCTURE
    - Partner receives [X]% of client fees for services rendered
@@ -871,6 +879,8 @@ And: [Partner Name] (the "Partner")
    - Response to Company requests: Within 24 hours
    - Deliverable timeline: As specified per project
    - Client satisfaction minimum: 4/5 stars
+   - SLA BREACH: First breach receives written warning; 
+     third breach in 90 days triggers termination review
 
 4. TERM
    - Initial term: 12 months
@@ -879,7 +889,7 @@ And: [Partner Name] (the "Partner")
 
 5. QUALITY CONTROL
    - Company reserves right to review all deliverables
-   - Partner agrees to revisions as requested
+   - Partner agrees to reasonable revisions (max 2 rounds per deliverable)
    - Repeated quality failures may result in termination
 
 Signed:
