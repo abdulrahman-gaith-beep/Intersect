@@ -85,14 +85,46 @@ const servicesData: Service[] = [
 
 function Badge({ type }: { type: ServiceType }) {
   const isAuto = type === 'automated';
+  const Icon = isAuto ? Zap : Users;
+  const label = isAuto ? 'Instant Access' : 'Advisory Team';
+  const className = isAuto
+    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+    : 'bg-indigo-50 text-indigo-700 border-indigo-200';
+
   return (
-    <span className={`px-2 py-1 text-xs font-semibold rounded-full border ${
-      isAuto 
-        ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
-        : 'bg-indigo-50 text-indigo-700 border-indigo-200'
-    }`}>
-      {isAuto ? <span className="flex items-center gap-1"><Zap size={12}/> Instant Access</span> : <span className="flex items-center gap-1"><Users size={12}/> Advisory Team</span>}
+    <span className={`px-2 py-1 text-xs font-semibold rounded-full border ${className}`}>
+      <span className="flex items-center gap-1">
+        <Icon size={12} /> {label}
+      </span>
     </span>
+  );
+}
+
+function ServiceCard({ service }: { service: Service }) {
+  const ServiceIcon = service.icon;
+  const isAutomated = service.type === 'automated';
+
+  return (
+    <div className="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-shadow flex flex-col">
+      <div className="flex justify-between items-start mb-4">
+        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${isAutomated ? 'bg-emerald-100 text-emerald-600' : 'bg-indigo-100 text-indigo-600'}`}>
+          <ServiceIcon size={20} />
+        </div>
+        <Badge type={service.type} />
+      </div>
+      <h3 className="font-bold text-slate-900 mb-2">{service.title}</h3>
+      <p className="text-sm text-slate-500 mb-6 flex-1">{service.description}</p>
+      
+      {isAutomated ? (
+        <button className="w-full py-2.5 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
+          <Zap size={16} /> Launch Tool
+        </button>
+      ) : (
+        <button className="w-full py-2.5 border-2 border-indigo-100 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-50 transition-colors flex items-center justify-center gap-2">
+          <MessageSquare size={16} /> Ask our Team
+        </button>
+      )}
+    </div>
   );
 }
 
@@ -338,31 +370,9 @@ function Dashboard({ activeTab, onSetActiveTab, onSignOut }: DashboardProps) {
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {servicesData.map((service) => {
-                  const ServiceIcon = service.icon;
-                  return (
-                    <div key={service.id} className="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-shadow flex flex-col">
-                      <div className="flex justify-between items-start mb-4">
-                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${service.type === 'automated' ? 'bg-emerald-100 text-emerald-600' : 'bg-indigo-100 text-indigo-600'}`}>
-                          <ServiceIcon size={20} />
-                        </div>
-                        <Badge type={service.type} />
-                      </div>
-                      <h3 className="font-bold text-slate-900 mb-2">{service.title}</h3>
-                      <p className="text-sm text-slate-500 mb-6 flex-1">{service.description}</p>
-                      
-                      {service.type === 'automated' ? (
-                        <button className="w-full py-2.5 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
-                          <Zap size={16} /> Launch Tool
-                        </button>
-                      ) : (
-                        <button className="w-full py-2.5 border-2 border-indigo-100 text-indigo-700 rounded-lg text-sm font-medium hover:bg-indigo-50 transition-colors flex items-center justify-center gap-2">
-                          <MessageSquare size={16} /> Ask our Team
-                        </button>
-                      )}
-                    </div>
-                  );
-                })}
+                {servicesData.map((service) => (
+                  <ServiceCard key={service.id} service={service} />
+                ))}
               </div>
             </div>
           )}
