@@ -1,152 +1,73 @@
-# Intersect
+# React + TypeScript + Vite
 
-**Soft-Landing International Companies into Saudi Arabia**
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Intersect provides A-to-Z support for international companies entering the Saudi Arabian market, including Strategy, Go-To-Market (GTM), Product-Market Fit, and Integration services.
+Currently, two official plugins are available:
 
-## Vision 2030 Alignment
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-We help companies capitalize on Saudi Arabia's Vision 2030 transformation by providing:
-- Business licensing and company formation
-- Office and real estate solutions
-- Talent acquisition and HR support
-- Go-to-market strategy and execution
-- Government relations and compliance
+## React Compiler
 
-## Documentation
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-- [90-Day Recovery & Scale Roadmap](docs/90-DAY-RECOVERY-ROADMAP.md) - Comprehensive operational transformation plan
+## Expanding the ESLint configuration
 
-## Our Approach
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-We operate as an **orchestrator**, leveraging a network of local expert partners (Legal, HR, Real Estate, Marketing, Accounting, Government Relations) on a commission-based model. This lean approach enables us to:
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-1. Keep fixed costs low
-2. Scale with client demand
-3. Provide best-in-class local expertise
-4. Guarantee results with our 90-Day Market Entry Promise
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-## Contact
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-For inquiries about entering the Saudi market, visit [intersect.sa](https://intersect.sa)
-## Your Gateway to the Saudi Market
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-**Intersect** is a technology-driven soft landing company that facilitates seamless market entry for international businesses into the Kingdom of Saudi Arabia. We combine cutting-edge AI technology with deep local expertise to provide comprehensive market entry solutions.
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
----
-
-## 🎯 What We Do
-
-We help international companies establish successful operations in Saudi Arabia by:
-
-- **Reducing market entry timeline by 60%** through AI-powered automation
-- **Navigating complex regulatory requirements** with expert guidance
-- **Providing real-time market intelligence** via our proprietary AI platform
-- **Connecting companies with trusted local partners** through our extensive network
-- **Ensuring full compliance** with Saudi laws and Vision 2030 initiatives
-
----
-
-## 📚 Documentation Index
-
-This repository contains comprehensive documentation for Intersect's operations and services:
-
-### Core Company Documents
-
-| Document | Description |
-|----------|-------------|
-| [Company Overview](docs/01-COMPANY-OVERVIEW.md) | Company profile, vision, mission, and leadership |
-| [Business Plan](docs/02-BUSINESS-PLAN.md) | Comprehensive business strategy and market analysis |
-| [Financial Projections](docs/03-FINANCIAL-PROJECTIONS.md) | 5-year financial forecasts, P&L, cash flow, and funding requirements |
-
-### Product & Services
-
-| Document | Description |
-|----------|-------------|
-| [AI Agent Documentation](docs/04-AI-AGENT-DOCUMENTATION.md) | Technical documentation for our AI-powered platform |
-| [Service Offerings](docs/05-SERVICE-OFFERINGS.md) | Complete catalog of services and pricing |
-| [Market Entry Strategy Guide](docs/06-MARKET-ENTRY-STRATEGY.md) | Comprehensive guide for entering the Saudi market |
-
-### Compliance & Legal
-
-| Document | Description |
-|----------|-------------|
-| [Legal & Compliance Framework](docs/07-LEGAL-COMPLIANCE.md) | Regulatory requirements, compliance program, and legal considerations |
-
-### Operations
-
-| Document | Description |
-|----------|-------------|
-| [Client Onboarding Guide](docs/08-CLIENT-ONBOARDING.md) | Step-by-step guide for new clients |
-| [Partnership Program](docs/09-PARTNERSHIP-PROGRAM.md) | Partner tiers, benefits, and engagement model |
-
----
-
-## 🚀 Key Features
-
-### AI-Powered Platform
-- Real-time regulatory intelligence
-- Automated document processing
-- Market intelligence dashboard
-- Partner matching algorithm
-- Progress tracking and analytics
-
-### Expert Services
-- Company formation and licensing
-- Legal entity structuring
-- Bank account setup
-- Talent acquisition
-- Government relations
-
-### Industry Focus
-- Technology & IT
-- Healthcare & Life Sciences
-- Financial Services
-- Manufacturing
-- Retail & Consumer
-- Energy & Environment
-
----
-
-## 📊 Quick Stats
-
-| Metric | Target |
-|--------|--------|
-| Market Entry Timeline Reduction | 60% |
-| Client Success Rate | 95% |
-| Year 3 Revenue Target | SAR 25M |
-| AI Platform Accuracy | 94% |
-
----
-
-## 🏆 Why Choose Intersect?
-
-1. **AI-Powered Insights** - Our proprietary platform provides real-time intelligence
-2. **End-to-End Support** - From assessment to full operations
-3. **Local Expertise** - Deep Saudi market knowledge and connections
-4. **Vision 2030 Alignment** - Strategic positioning for Saudi transformation
-5. **Risk Mitigation** - Comprehensive due diligence and compliance
-
----
-
-## 📞 Contact Us
-
-- **Website:** www.intersect-ksa.com
-- **Email:** info@intersect-ksa.com
-- **Phone:** +966 11 XXX XXXX
-- **Address:** King Fahd Road, Riyadh, Kingdom of Saudi Arabia
-
-### Quick Links
-- **Services Inquiry:** services@intersect-ksa.com
-- **Partnership:** partners@intersect-ksa.com
-- **Support:** support@intersect-ksa.com
-
----
-
-## 📄 License
-
-This documentation is proprietary and confidential to Intersect LLC.
-
----
-
-*Intersect - Bridging Global Business to Saudi Opportunity*
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
