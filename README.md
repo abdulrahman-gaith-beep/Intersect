@@ -2,6 +2,49 @@
 
 **Soft-Landing International Companies into Saudi Arabia**
 
+## 🖥️ Intersect OS Platform
+
+This repository includes the full-stack Intersect OS platform:
+
+### Quick Start
+
+**Option 1: Run Full Stack Locally**
+
+```bash
+# Terminal 1 - Start Backend
+cd server
+npm install
+npm start
+# Server runs on http://localhost:3001
+
+# Terminal 2 - Start Frontend
+cd app
+npm install
+npm run dev
+# Frontend runs on http://localhost:5173
+```
+
+**Option 2: Frontend Only**
+```bash
+cd app
+npm install
+npm run dev
+```
+
+### Demo Credentials
+- **Email:** demo@techcorp.com
+- **Password:** demo123
+
+### Tech Stack
+- **Frontend:** React 19, TypeScript, Vite, Tailwind CSS 4
+- **Backend:** Node.js, Express.js
+- **Icons:** Lucide React
+
+### API Documentation
+See [server/README.md](server/README.md) for full API documentation.
+
+---
+
 Intersect provides A-to-Z support for international companies entering the Saudi Arabian market, including Strategy, Go-To-Market (GTM), Product-Market Fit, and Integration services.
 
 ## Vision 2030 Alignment
