@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* Reset default button styles for Tailwind */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
