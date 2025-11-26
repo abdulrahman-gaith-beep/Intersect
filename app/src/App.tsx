@@ -14,7 +14,18 @@ import {
   Search,
   Menu,
   X,
-  Download
+  Download,
+  Clock,
+  Shield,
+  TrendingUp,
+  Star,
+  Phone,
+  Mail,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Bell,
+  Settings
 } from 'lucide-react';
 
 // --- Types & Data ---
@@ -221,9 +232,9 @@ function LandingPage({ onNavigateToDashboard, showMobileMenu, onToggleMobileMenu
               { title: "Dynamic Data Room", desc: "A secure vault that auto-populates the documents investors need for your JV.", Icon: Lock },
               { title: "On-Demand Experts", desc: "Need to negotiate with a Minister? Click one button to deploy our GR team.", Icon: Users },
             ].map((feature, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
-                  <feature.Icon className="text-slate-900 w-6 h-6" />
+              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow group">
+                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 transition-colors">
+                  <feature.Icon className="text-emerald-600 w-6 h-6 group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
                 <p className="text-slate-600">{feature.desc}</p>
@@ -232,6 +243,168 @@ function LandingPage({ onNavigateToDashboard, showMobileMenu, onToggleMobileMenu
           </div>
         </div>
       </div>
+
+      {/* How It Works Section */}
+      <div className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Process</span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-2">How It Works</h2>
+            <p className="mt-4 text-slate-600 max-w-2xl mx-auto">Four simple steps to establish your presence in Saudi Arabia</p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { step: "01", title: "Assessment", desc: "We analyze your business model and identify the optimal entry strategy for Saudi Arabia.", Icon: Search },
+              { step: "02", title: "Registration", desc: "Automated entity formation with MISA licensing and commercial registration.", Icon: FileText },
+              { step: "03", title: "Setup", desc: "Bank accounts, office space, and talent acquisition handled seamlessly.", Icon: Building2 },
+              { step: "04", title: "Launch", desc: "Go-to-market execution with local partner introductions and deal flow.", Icon: TrendingUp },
+            ].map((item, i) => (
+              <div key={i} className="text-center relative">
+                <div className="text-6xl font-bold text-slate-100 mb-4">{item.step}</div>
+                <div className="w-14 h-14 bg-emerald-600 rounded-full flex items-center justify-center mx-auto -mt-10 relative z-10 shadow-lg">
+                  <item.Icon className="text-white w-6 h-6" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mt-4 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm">{item.desc}</p>
+                {i < 3 && (
+                  <div className="hidden md:block absolute top-12 left-[60%] w-[80%] border-t-2 border-dashed border-slate-200"></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Section */}
+      <div className="py-20 bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            {[
+              { value: "60%", label: "Faster Market Entry", Icon: Clock },
+              { value: "95%", label: "Client Success Rate", Icon: Star },
+              { value: "50+", label: "Companies Launched", Icon: Building2 },
+              { value: "100%", label: "Compliance Guaranteed", Icon: Shield },
+            ].map((stat, i) => (
+              <div key={i} className="p-6">
+                <stat.Icon className="w-8 h-8 text-emerald-400 mx-auto mb-4" />
+                <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-slate-400">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonial Section */}
+      <div className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex justify-center mb-6">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Star key={i} className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+            ))}
+          </div>
+          <blockquote className="text-2xl font-medium text-slate-800 mb-8 leading-relaxed">
+            "Intersect reduced our Saudi market entry timeline from 18 months to just 6 months. Their hybrid approach of technology and local expertise was exactly what we needed."
+          </blockquote>
+          <div className="flex items-center justify-center gap-4">
+            <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              JK
+            </div>
+            <div className="text-left">
+              <div className="font-bold text-slate-900">James Kim</div>
+              <div className="text-slate-600 text-sm">CEO, TechVentures Asia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="py-24 bg-gradient-to-br from-emerald-600 to-emerald-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Enter the Saudi Market?</h2>
+          <p className="text-emerald-100 text-lg mb-10 max-w-2xl mx-auto">
+            Join 50+ international companies who have successfully launched in Saudi Arabia with Intersect OS.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <button 
+              onClick={onNavigateToDashboard}
+              className="px-8 py-4 bg-white text-emerald-700 rounded-xl font-semibold hover:bg-emerald-50 transition-colors flex items-center justify-center gap-2"
+            >
+              Start Your Journey <ArrowRight size={20}/>
+            </button>
+            <button className="px-8 py-4 bg-transparent text-white border-2 border-white/30 rounded-xl font-semibold hover:bg-white/10 transition-colors">
+              Schedule a Call
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 text-slate-400 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
+            <div>
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center">
+                  <Globe className="text-white w-5 h-5" />
+                </div>
+                <span className="text-xl font-bold text-white">INTERSECT<span className="text-emerald-500">.OS</span></span>
+              </div>
+              <p className="text-sm mb-6">Your gateway to the Saudi Arabian market. We make soft landing simple.</p>
+              <div className="flex gap-4">
+                <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition-colors">
+                  <Twitter className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-4">Services</h4>
+              <ul className="space-y-3 text-sm">
+                <li><a href="#" className="hover:text-emerald-400 transition-colors">MISA Licensing</a></li>
+                <li><a href="#" className="hover:text-emerald-400 transition-colors">Entity Formation</a></li>
+                <li><a href="#" className="hover:text-emerald-400 transition-colors">Market Intelligence</a></li>
+                <li><a href="#" className="hover:text-emerald-400 transition-colors">Government Relations</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-4">Company</h4>
+              <ul className="space-y-3 text-sm">
+                <li><a href="#" className="hover:text-emerald-400 transition-colors">About Us</a></li>
+                <li><a href="#" className="hover:text-emerald-400 transition-colors">Case Studies</a></li>
+                <li><a href="#" className="hover:text-emerald-400 transition-colors">Careers</a></li>
+                <li><a href="#" className="hover:text-emerald-400 transition-colors">Blog</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-4">Contact</h4>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4" />
+                  King Fahd Road, Riyadh
+                </li>
+                <li className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  hello@intersect.sa
+                </li>
+                <li className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  +966 11 XXX XXXX
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm">© 2024 Intersect. All rights reserved.</p>
+            <div className="flex gap-6 text-sm">
+              <a href="#" className="hover:text-emerald-400 transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-emerald-400 transition-colors">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
@@ -240,67 +413,116 @@ interface DashboardProps {
   activeTab: string;
   onSetActiveTab: (tab: string) => void;
   onSignOut: () => void;
+  showMobileSidebar: boolean;
+  onToggleMobileSidebar: () => void;
 }
 
-function Dashboard({ activeTab, onSetActiveTab, onSignOut }: DashboardProps) {
-  return (
-    <div className="flex h-screen bg-slate-50 font-sans text-slate-900">
-      {/* Sidebar */}
-      <div className="w-64 bg-slate-900 text-slate-300 flex-col hidden md:flex">
-        <div className="p-6">
-          <div className="flex items-center gap-2 text-white font-bold text-xl">
-            <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center">
-              <Globe className="text-white w-5 h-5" />
-            </div>
-            INTERSECT
-          </div>
-        </div>
-        
-        <div className="flex-1 px-4 space-y-2 mt-4">
-          <button 
-            onClick={() => onSetActiveTab('overview')}
-            className={`w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 transition-colors ${activeTab === 'overview' ? 'bg-emerald-600 text-white' : 'hover:bg-slate-800'}`}
-          >
-            <BarChart3 size={20} /> Overview
-          </button>
-          <button 
-            onClick={() => onSetActiveTab('services')}
-            className={`w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 transition-colors ${activeTab === 'services' ? 'bg-emerald-600 text-white' : 'hover:bg-slate-800'}`}
-          >
-            <Briefcase size={20} /> Service Marketplace
-          </button>
-          <button className="w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 hover:bg-slate-800 transition-colors">
-            <FileText size={20} /> My Documents
-          </button>
-          <button className="w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 hover:bg-slate-800 transition-colors">
-            <Users size={20} /> Deal Team
-          </button>
-        </div>
+const navItems = [
+  { id: 'overview', label: 'Overview', Icon: BarChart3 },
+  { id: 'services', label: 'Service Marketplace', Icon: Briefcase },
+  { id: 'documents', label: 'My Documents', Icon: FileText },
+  { id: 'team', label: 'Deal Team', Icon: Users },
+];
 
-        <div className="p-4 border-t border-slate-800">
-          <button onClick={onSignOut} className="flex items-center gap-2 text-sm text-slate-400 hover:text-white">
-             Sign Out
-          </button>
+interface SidebarContentProps {
+  activeTab: string;
+  onSetActiveTab: (tab: string) => void;
+  onSignOut: () => void;
+  onClose?: () => void;
+}
+
+function SidebarContent({ activeTab, onSetActiveTab, onSignOut, onClose }: SidebarContentProps) {
+  return (
+    <>
+      <div className="p-6">
+        <div className="flex items-center gap-2 text-white font-bold text-xl">
+          <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center">
+            <Globe className="text-white w-5 h-5" />
+          </div>
+          INTERSECT
         </div>
       </div>
+      
+      <div className="flex-1 px-4 space-y-2 mt-4">
+        {navItems.map((item) => (
+          <button 
+            key={item.id}
+            onClick={() => {
+              onSetActiveTab(item.id);
+              if (onClose) onClose();
+            }}
+            className={`w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 transition-colors ${activeTab === item.id ? 'bg-emerald-600 text-white' : 'hover:bg-slate-800'}`}
+          >
+            <item.Icon size={20} /> {item.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="p-4 border-t border-slate-800 space-y-2">
+        <button className="w-full text-left px-4 py-2 rounded-lg flex items-center gap-3 hover:bg-slate-800 transition-colors text-sm">
+          <Settings size={18} /> Settings
+        </button>
+        <button onClick={onSignOut} className="w-full text-left px-4 py-2 rounded-lg flex items-center gap-2 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors text-sm">
+          Sign Out
+        </button>
+      </div>
+    </>
+  );
+}
+
+function Dashboard({ activeTab, onSetActiveTab, onSignOut, showMobileSidebar, onToggleMobileSidebar }: DashboardProps) {
+  return (
+    <div className="flex h-screen bg-slate-50 font-sans text-slate-900">
+      {/* Desktop Sidebar */}
+      <div className="w-64 bg-slate-900 text-slate-300 flex-col hidden md:flex">
+        <SidebarContent activeTab={activeTab} onSetActiveTab={onSetActiveTab} onSignOut={onSignOut} />
+      </div>
+
+      {/* Mobile Sidebar Overlay */}
+      {showMobileSidebar && (
+        <div className="fixed inset-0 z-50 md:hidden">
+          <div className="absolute inset-0 bg-black/50" onClick={onToggleMobileSidebar}></div>
+          <div className="absolute left-0 top-0 h-full w-64 bg-slate-900 text-slate-300 flex flex-col">
+            <div className="absolute right-4 top-4">
+              <button onClick={onToggleMobileSidebar} className="text-slate-400 hover:text-white">
+                <X size={24} />
+              </button>
+            </div>
+            <SidebarContent activeTab={activeTab} onSetActiveTab={onSetActiveTab} onSignOut={onSignOut} onClose={onToggleMobileSidebar} />
+          </div>
+        </div>
+      )}
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Top Header */}
-        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8">
-          <h2 className="text-lg font-semibold text-slate-800">
-            {activeTab === 'overview' ? 'Soft Landing Tracker' : 'Service Marketplace'}
-          </h2>
+        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 md:px-8">
           <div className="flex items-center gap-4">
-            <div className="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full border border-emerald-200">
+            <button onClick={onToggleMobileSidebar} className="md:hidden p-2 -ml-2 hover:bg-slate-100 rounded-lg">
+              <Menu size={24} />
+            </button>
+            <h2 className="text-lg font-semibold text-slate-800">
+              {activeTab === 'overview' ? 'Soft Landing Tracker' : 
+               activeTab === 'services' ? 'Service Marketplace' :
+               activeTab === 'documents' ? 'My Documents' : 'Deal Team'}
+            </h2>
+          </div>
+          <div className="flex items-center gap-2 md:gap-4">
+            <button className="p-2 hover:bg-slate-100 rounded-lg relative">
+              <Bell size={20} className="text-slate-600" />
+              <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+            </button>
+            <div className="hidden sm:block px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full border border-emerald-200">
               TechCorp Global Ltd.
             </div>
-            <div className="w-8 h-8 bg-slate-200 rounded-full"></div>
+            <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+              TC
+            </div>
           </div>
         </header>
 
         {/* Dashboard Content */}
-        <main className="flex-1 overflow-y-auto p-8">
+        <main className="flex-1 overflow-y-auto p-4 md:p-8">
           
           {activeTab === 'overview' && (
             <div className="max-w-5xl mx-auto space-y-8">
@@ -387,6 +609,7 @@ export default function App() {
   const [view, setView] = useState<'landing' | 'dashboard'>('landing');
   const [activeTab, setActiveTab] = useState('overview');
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [showMobileSidebar, setShowMobileSidebar] = useState(false);
 
   if (view === 'landing') {
     return (
@@ -403,6 +626,8 @@ export default function App() {
       activeTab={activeTab}
       onSetActiveTab={setActiveTab}
       onSignOut={() => setView('landing')}
+      showMobileSidebar={showMobileSidebar}
+      onToggleMobileSidebar={() => setShowMobileSidebar(!showMobileSidebar)}
     />
   );
 }
