@@ -7,9 +7,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return stored ? JSON.parse(stored) : null;
   });
 
-  const login = async (email: string, password: string): Promise<boolean> => {
-    // Simulate API call (password is validated on server-side in real app)
-    void password; // acknowledge parameter for mock implementation
+  const login = async (email: string, _password: string): Promise<boolean> => {
+    // Simulate API call (_password would be validated server-side in real app)
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     const mockUser: User = {
@@ -24,9 +23,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return true;
   };
 
-  const signup = async (name: string, email: string, password: string, company: string): Promise<boolean> => {
-    // Simulate API call (password is validated on server-side in real app)
-    void password; // acknowledge parameter for mock implementation
+  const signup = async (name: string, email: string, _password: string, company: string): Promise<boolean> => {
+    // Simulate API call (_password would be validated server-side in real app)
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     const mockUser: User = {

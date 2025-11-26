@@ -322,7 +322,7 @@ const Support: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <CheckCircle size={18} className="text-emerald-200" />
-                <span className="text-sm">Average response time: &lt; 2 mins</span>
+                <span className="text-sm">Average response time: under 2 mins</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle size={18} className="text-emerald-200" />
