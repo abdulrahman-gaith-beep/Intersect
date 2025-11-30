@@ -43,6 +43,17 @@ npm run dev
 ### API Documentation
 See [server/README.md](server/README.md) for full API documentation.
 
+### 📸 Platform Screenshots
+
+**Landing Page**
+![INTERSECT.OS landing page showing hero section with branding, navigation bar, and call-to-action buttons for soft landing services](https://github.com/user-attachments/assets/813fa83e-f5b3-4e54-902c-6cf249605559)
+
+**Dashboard - Soft Landing Tracker**
+![Dashboard overview showing market entry progress tracker at 35% complete, with registration, compliance, deal origination, and JV formation steps](https://github.com/user-attachments/assets/2cd6356a-67d9-4cb4-8348-dee411feb7b0)
+
+**Service Marketplace**
+![Service marketplace displaying six service cards including Market Intelligence Report, Entity Name Reservation, Government Deal Origination, JV Structure and Equity, MISA License Application, and Industrial Land Allocation](https://github.com/user-attachments/assets/a8eb11d7-109e-4257-b8a4-4b219377a916)
+
 ---
 
 Intersect provides A-to-Z support for international companies entering the Saudi Arabian market, including Strategy, Go-To-Market (GTM), Product-Market Fit, and Integration services.
